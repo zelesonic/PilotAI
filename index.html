@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelesonic Pilot AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx-preview@0.1.15/dist/docx-preview.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <div id="app-panel" class="app-container">
+        <div class="sidebar">
+            <h1 class="logo">Zelesonic Pilot AI</h1>
+            <div id="current-file-display" style="display: none;">
+                <strong>Current File:</strong><br>
+                <span id="current-file-name"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="new-chat-btn">New Chat</a></li>
+                    <li><a href="#" id="upload-files-btn">Upload & View Files</a></li>
+                    <li><a href="#" id="configure-ai-btn">Artificial Intelligence (AI)</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="theme-toggle-container">
+                    <span>Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle" checked> <span class="slider round"></span>
+                    </label>
+                </div>
+                </div>
+        </div>
+        <div class="main-content-wrapper">
+            <div class="main-content">
+                <div id="chat-box-view" class="content-view active">
+                    <div class="chat-messages">
+                        <p class="ai-message">To begin, please go to "Artificial Intelligence (AI)" to add and activate your models, then go to "Upload & View Files" to upload and select a document.</p>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="chat-input-field" placeholder="Ask a question..." autocomplete="off">
+                        <button id="send-chat-btn">Send</button>
+                    </div>
+                </div>
+
+                <div id="upload-view" class="content-view">
+                    <div class="upload-section">
+                        <h3>Upload New Document</h3>
+                        <p>Supported formats: CSV, XLSX</p>
+                        <input type="file" id="file-upload-input" accept=".csv,.xlsx" style="display: none;">
+                        <button id="upload-button">Choose File to Upload</button>
+                        <div id="upload-status"></div>
+                    </div>
+
+                    <div class="file-list-section">
+                        <h3>Uploaded Documents</h3>
+                        <ul id="document-list">
+                            <p class="placeholder-text-panel">No documents uploaded yet.</p>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="ai-config-view" class="content-view">
+                    <div class="config-section">
+                        <h4>Current Status</h4>
+                        <p>Ollama Status: <span id="ollama-status">Checking...</span></p>
+                        <p>Active Embedding Model: <span id="active-embedding-model">None</span></p>
+                        <p>Active Generative Model: <span id="active-generative-model">None</span></p>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>Add New Models</h4>
+                        <label for="base-url-input">Base URL (Optional)</label>
+                        <input type="text" id="base-url-input" placeholder="e.g., http://localhost:11434">
+
+                        <label for="embedding-model-input">Embedding Model Name</label>
+                        <input type="text" id="embedding-model-input" placeholder="e.g., nomic-embed-text">
+
+                        <label for="generative-model-input">Generative Model Name</label>
+                        <input type="text" id="generative-model-input" placeholder="e.g., llama3">
+
+                        <button id="save-model-settings-btn">Save Settings</button>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>Activate Models</h4>
+                        <label for="activate-embedding-select">Embedding Model:</label>
+                        <select id="activate-embedding-select">
+                            <option value="">Select an embedding model</option>
+                        </select>
+                        <label for="activate-generative-select">Generative Model:</label>
+                        <select id="activate-generative-select">
+                            <option value="">Select a generative model</option>
+                        </select>
+                        <button id="activate-models-btn">Activate Selected Models</button>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>Saved Models</h4>
+                        <ul id="saved-models-list">
+                            <p class="placeholder-text">No models saved yet.</p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="right-panel" class="right-panel" style="display: none;">
+                <div class="right-panel-header">
+                    <h3 id="right-panel-title"></h3>
+                    <button class="close-panel-btn">
+                        <span class="close-icon">&times;</span>
+                    </button>
+                </div>
+                <div id="right-panel-content" class="right-panel-content">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
