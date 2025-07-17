@@ -1,7 +1,6 @@
 # PilotAI
 
 Zelesonic - AI-Powered Data Analysis
-Welcome to Zelesonic. This tool lets you analyze your data files using powerful AI models that run entirely on your own computer, ensuring your data remains private.
 
 Prerequisites
 Before you start, make sure you have Ollama installed and running on your system. This is required to run the local AI models.
