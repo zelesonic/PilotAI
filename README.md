@@ -11,11 +11,11 @@ Installation and Usage
 Follow the instructions for your operating system.
 
 On Windows
-Download the Zelesonic-Windows.zip file.
+Download the Windows zip file.
 
 Unzip the downloaded file.
 
-Double-click the zelesonic.exe file to start the application.
+Double-click the zelesonic.exe file to start the application. Go to http://localhost:5000 to use the app.
 
 On macOS
 Download the Zelesonic-macOS.zip file.
@@ -24,7 +24,7 @@ Unzip the downloaded file.
 
 Open the Terminal app.
 
-Navigate to the unzipped folder using the cd command.
+Navigate to the unzipped folder using the cd command. Go to http://localhost:5000 to use the app.
 
 # Example:
 cd ~/Downloads/Zelesonic-macOS
@@ -36,6 +36,8 @@ chmod +x zelesonic-pilot-ai
 Start the application by double-clicking the zelesonic file or running it from the terminal:
 
 ./zelesonic-pilot-ai
+
+Go to http://localhost:5000 to use the app.
 
 Note: The first time you run it, you may need to go to System Settings > Privacy & Security to allow the application to run.
 
@@ -58,6 +60,8 @@ chmod +x zelesonic-pilot-ai
 Start the application from the terminal:
 
 ./zelesonic-pilot-ai
+
+Go to http://localhost:5000 to use the app.
 
 How to Use the AI Features
 Once the application is running, you need to download the necessary AI models through Ollama.
