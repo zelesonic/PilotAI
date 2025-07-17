@@ -31,11 +31,11 @@ cd ~/Downloads/Zelesonic-macOS
 
 Make the file executable by running this command:
 
-chmod +x zelesonic
+chmod +x zelesonic-pilot-ai
 
 Start the application by double-clicking the zelesonic file or running it from the terminal:
 
-./zelesonic
+./zelesonic-pilot-ai
 
 Note: The first time you run it, you may need to go to System Settings > Privacy & Security to allow the application to run.
 
@@ -53,11 +53,11 @@ cd ~/Downloads/Zelesonic-Linux
 
 Make the file executable by running this command:
 
-chmod +x zelesonic
+chmod +x zelesonic-pilot-ai
 
 Start the application from the terminal:
 
-./zelesonic
+./zelesonic-pilot-ai
 
 How to Use the AI Features
 Once the application is running, you need to download the necessary AI models through Ollama.
