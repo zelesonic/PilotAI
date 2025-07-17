@@ -1,0 +1,11 @@
+# Ignore compiled executables
+zelesonic-pilot-ai.exe
+zelesonic-pilot-ai-linux
+zelesonic-pilot-ai-macos-arm64
+zelesonic-pilot-ai-macos-intel
+
+# Ignore packaged zip files
+*.zip
+
+# Ignore local database files
+pilot.db
