@@ -5,7 +5,7 @@ Zelesonic - AI-Powered Data Analysis
 Prerequisites
 Before you start, make sure you have Ollama installed and running on your system. This is required to run the local AI models.
 
-Download Ollama Here
+Download Ollama 
 
 Installation and Usage
 Follow the instructions for your operating system.
